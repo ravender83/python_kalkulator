@@ -229,7 +229,7 @@
             <property name="font">
              <font>
               <family>FreeMono</family>
-              <pointsize>36</pointsize>
+              <pointsize>30</pointsize>
               <weight>50</weight>
               <bold>false</bold>
               <stylestrategy>PreferAntialias</stylestrategy>
@@ -273,7 +273,7 @@
             <property name="font">
              <font>
               <family>FreeMono</family>
-              <pointsize>36</pointsize>
+              <pointsize>30</pointsize>
               <weight>50</weight>
               <bold>false</bold>
               <stylestrategy>PreferAntialias</stylestrategy>
@@ -314,7 +314,7 @@
             <property name="font">
              <font>
               <family>FreeMono</family>
-              <pointsize>36</pointsize>
+              <pointsize>30</pointsize>
               <weight>50</weight>
               <bold>false</bold>
               <stylestrategy>PreferAntialias</stylestrategy>
@@ -378,7 +378,7 @@
             <property name="font">
              <font>
               <family>FreeMono</family>
-              <pointsize>36</pointsize>
+              <pointsize>30</pointsize>
               <weight>50</weight>
               <bold>false</bold>
               <stylestrategy>PreferAntialias</stylestrategy>
@@ -419,7 +419,7 @@
             <property name="font">
              <font>
               <family>FreeMono</family>
-              <pointsize>36</pointsize>
+              <pointsize>30</pointsize>
               <weight>50</weight>
               <bold>false</bold>
               <stylestrategy>PreferAntialias</stylestrategy>
@@ -658,7 +658,7 @@
             </property>
             <property name="font">
              <font>
-              <family>Dingbats</family>
+              <family>FreeMono</family>
               <pointsize>40</pointsize>
               <weight>50</weight>
               <bold>false</bold>
@@ -672,7 +672,7 @@
              <string notr="true">color: rgb(180, 0, 0);</string>
             </property>
             <property name="text">
-             <string>8</string>
+             <string>X</string>
             </property>
             <property name="autoDefault">
              <bool>false</bool>
@@ -943,7 +943,7 @@
             </property>
             <property name="font">
              <font>
-              <family>Dingbats</family>
+              <family>FreeMono</family>
               <pointsize>40</pointsize>
               <weight>50</weight>
               <bold>false</bold>
@@ -969,7 +969,7 @@
              <locale language="Polish" country="Poland"/>
             </property>
             <property name="text">
-             <string>4</string>
+             <string>=</string>
             </property>
             <property name="autoDefault">
              <bool>false</bool>
@@ -1109,6 +1109,12 @@
             <property name="layoutMode">
              <enum>QListView::SinglePass</enum>
             </property>
+            <property name="gridSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
             <property name="uniformItemSizes">
              <bool>false</bool>
             </property>
@@ -1184,8 +1190,8 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>
