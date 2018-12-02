@@ -74,8 +74,9 @@ class MainWindow(QtWidgets.QMainWindow):
 				widgetLayout = QtWidgets.QHBoxLayout()
 				widgetLayout.addWidget(widgetText)
 				widget.setLayout(widgetLayout)
+				widgitItem.setSizeHint(QtCore.QSize(widget.sizeHint().width(), 46))
 				self.listZle.addItem(widgitItem)
-				widgitItem.setSizeHint(widget.sizeHint()) 
+				 
 				self.listZle.setItemWidget(widgitItem, widget)
 
 			self.tabWidget.setCurrentIndex(2)
