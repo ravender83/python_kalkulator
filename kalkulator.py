@@ -3,22 +3,20 @@
 Python QT
 Opis modułu jako całości
 """
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5 import QtCore, QtGui, QtWidgets, uic
 import sys
-import main_ui
 from mnoz import DivMul
 
 ts = DivMul()
 
-class MainWindow(QMainWindow, main_ui.Ui_MainWindow):
+class MainWindow(QtWidgets.QMainWindow):
 	def __init__(self):
-		QMainWindow.__init__(self)
+		super(MainWindow, self).__init__()
+		uic.loadUi('main_ui.ui', self)
 		self.znak = 'x'
 		self.znaki = '0'
 		self.ilosc = 50		
 
-		self.setupUi(self)
 		self.tabWidget.setCurrentIndex(0)
 		self.tabWidget.tabBar().hide()
 		self.btn_start.clicked.connect(self.open_calc_dialog)
@@ -49,9 +47,13 @@ class MainWindow(QMainWindow, main_ui.Ui_MainWindow):
 				self.znaki = (self.znaki + txt).lstrip("0")
 				self.lineZadanie.setText(ts.rownanie + self.znaki)
 
-	def usun(self):
+	def usun(self):		
 		self.znaki = self.znaki[:-1]
-		self.lineZadanie.setText(ts.rownanie + self.znaki)
+		if self.znaki == '':
+			self.znaki = '0'
+			self.lineZadanie.setText(ts.rownanie)
+		else:
+			self.lineZadanie.setText(ts.rownanie + self.znaki)
 
 	def sprawdz(self):
 		ts.sprawdz_wynik(int(self.znaki))
@@ -66,10 +68,10 @@ class MainWindow(QMainWindow, main_ui.Ui_MainWindow):
 			self.labWynik_zly.setText(f'Błędy: {len(ts.bledy)}')
 			self.listZle.clear()
 			for i in ts.bledy:
-				widgitItem = QListWidgetItem() 
-				widget = QWidget()
-				widgetText =  QLabel(f'{i[0]}<font color=#ff0000>{i[1]},</font><font color=#00aa00> poprawnie <b>{i[2]}</b></font>')
-				widgetLayout = QHBoxLayout()
+				widgitItem = QtWidgets.QListWidgetItem() 
+				widget = QtWidgets.QWidget()
+				widgetText =  QtWidgets.QLabel(f'{i[0]}<font color=#ff0000>{i[1]},</font><font color=#00aa00> poprawnie <b>{i[2]}</b></font>')
+				widgetLayout = QtWidgets.QHBoxLayout()
 				widgetLayout.addWidget(widgetText)
 				widget.setLayout(widgetLayout)
 				self.listZle.addItem(widgitItem)
@@ -102,7 +104,7 @@ def main():
 	'''
 	Główna funkcja modułu.
 	'''
-	app = QApplication(sys.argv)
+	app = QtWidgets.QApplication(sys.argv)
 	window = MainWindow()
 	window.show()
 	app.exec_()
